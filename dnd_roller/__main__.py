@@ -1,4 +1,6 @@
 from random import randint
+from colorama import init as colorama_init
+from colorama import Fore, Style
 
 def roll_dice(dice_str: str) -> tuple[int, int, int, list[int] | None]:
     amount, dice = dice_str.split('d')
@@ -61,7 +63,13 @@ def main() -> None:
             else:
                 print(f'You rolled a {dice_roll} from {dice_str}.')
         else:
-            [print(f'Roll {i+1}: {r}') for i, r in enumerate(rolls)]
+            for i, r in enumerate(rolls):
+                if r == 20:
+                    print(f'{Fore.GREEN}Roll {i+1}: {r}{Style.RESET_ALL}')
+                elif r == 1:
+                    print(f'{Fore.RED}Roll {i+1}: {r}{Style.RESET_ALL}')
+                else:
+                    print(f"Roll {i+1}: {r}")
             print('')
             if dice == 20:
                 print(f'You rolled a {dice_roll} from {dice_str[1:]}, got {crits} crits, and {fails} fails.')
@@ -71,4 +79,5 @@ def main() -> None:
         print('')
 
 if __name__ == '__main__':
+    colorama_init()
     main()

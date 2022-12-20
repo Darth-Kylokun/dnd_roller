@@ -11,5 +11,8 @@ setup(
         "console_scripts": [
             "dnd_roll=dnd_roller.__main__:main"
         ]
-    }
+    },
+    requires=[
+        "colorama"
+    ]
 )
