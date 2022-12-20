@@ -1,0 +1,8 @@
+setup.py
+DnD_Roller.egg-info/PKG-INFO
+DnD_Roller.egg-info/SOURCES.txt
+DnD_Roller.egg-info/dependency_links.txt
+DnD_Roller.egg-info/entry_points.txt
+DnD_Roller.egg-info/top_level.txt
+dnd_roller/__init__.py
+dnd_roller/__main__.py
